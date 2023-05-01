@@ -16,5 +16,18 @@ public class Carta {
 		this.valor = valor;
 	}
 	
+	//Setters
+	public void setFace(String face) {
+		this.face = face;
+	}
+	
+	
+	public void setNipe(String nipe) {
+		this.nipe = nipe;
+	}
+
+	public void setValor(int valor) {
+		this.valor = valor;
+	}
 		
 	}
