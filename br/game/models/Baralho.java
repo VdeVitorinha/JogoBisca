@@ -9,6 +9,8 @@ public class Baralho {
 	
 	private List<Carta> monte;
 	
+	//Construtor do baralho, são usadas strings com as combinações para criar
+	// por meio de laços de repetição, a lista que conterá os objetos Carta
 	public Baralho() {
 		String[] nipe = {"Copas", "Espadas", "Ouros", "Paus"};
 		String[] faces = {"2","3","4","5","6","8","9","10","Q","J","K","As","7"};
@@ -23,12 +25,13 @@ public class Baralho {
 	}
 	
 	
-	
+	//método que retornará o tamanho do monte de cartas
 	public int tamanhoBaralho() {
 		return monte.size();
 	}
 	
-	public Carta cedeCarta() {
+	// metodo criado para conversar com o metodo da classe Jogador comprarCarta
+	public Carta cederCarta() {
 		int posicao = random.nextInt(tamanhoBaralho());
 		Carta carta = monte.get(posicao);
 		monte.remove(posicao);
