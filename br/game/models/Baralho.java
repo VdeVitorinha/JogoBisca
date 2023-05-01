@@ -2,8 +2,11 @@ package br.game.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Baralho {
+	Random random = new Random();
+	
 	private List<Carta> monte;
 	
 	public Baralho() {
@@ -23,5 +26,13 @@ public class Baralho {
 	
 	public int tamanhoBaralho() {
 		return monte.size();
+	}
+	
+	public Carta cedeCarta() {
+		int posicao = random.nextInt(tamanhoBaralho());
+		Carta carta = monte.get(posicao);
+		monte.remove(posicao);
+		
+		return carta;
 	}
 }
