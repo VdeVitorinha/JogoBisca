@@ -9,5 +9,12 @@ public class Carta {
 	private String face;
 	private int valor;
 	
+	//ADD Contrutor
+	public Carta(String nipe, String face, int valor) {
+		this.nipe = nipe;
+		this.face = face;
+		this.valor = valor;
+	}
+	
 		
 	}
