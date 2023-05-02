@@ -29,5 +29,19 @@ public class Carta {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
+	
+	//Getters:
+	
+		public String getNipe() {
+			return this.nipe;
+		}
+		
+		public String getFaces() {
+			return this.face;
+		}
+		
+		public int getValor() {
+			return this.valor;
+		}
 		
 	}
