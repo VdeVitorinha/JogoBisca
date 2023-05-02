@@ -43,5 +43,10 @@ public class Carta {
 		public int getValor() {
 			return this.valor;
 		}
+		//Metodo toString 
+		@Override
+		public String toString() {
+			return ""+this.face+" "+this.nipe+"";
+		}
 		
 	}
