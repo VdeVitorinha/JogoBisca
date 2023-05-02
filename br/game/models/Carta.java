@@ -48,5 +48,23 @@ public class Carta {
 		public String toString() {
 			return ""+this.face+" "+this.nipe+"";
 		}
+		//HashCode e equals - 6
+		@Override
+		public int hashCode() {
+			return Objects.hash(face, nipe, valor);
+		}
 		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			CartaCopia other = (CartaCopia) obj;
+			return Objects.equals(face, other.face)
+					&& Objects.equals(nipe, other.nipe) && valor == other.valor;
+		}
+
 	}
