@@ -39,5 +39,21 @@ public class BaralhoTest {
 			assertEquals("2", c.getFaces());
 			assertEquals(0, c.getValor());
 		}
+		
+		//Verificando se o baralho não esta gerando cartas iguais
+		@Test
+		void comparaCartaSemEmbaralhar() throws Exception{
+			Baralho b = new Baralho();
+			Carta c = b.comprarCarta();
+			
+			assertEquals("Copas", c.getNipe());
+			assertEquals("2", c.getFaces());
+			assertEquals(0, c.getValor());
+			
+			c = b.comprarCarta();
+			
+			assertEquals("Copas", c.getNipe());
+			assertEquals("3", c.getFaces());
+			assertEquals(0, c.getValor());
 }
 
