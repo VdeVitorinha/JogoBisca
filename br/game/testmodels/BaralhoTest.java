@@ -39,6 +39,16 @@ public class BaralhoTest {
 			assertEquals("2", c.getFaces());
 			assertEquals(0, c.getValor());
 		}
+		//Teste de compra de carta pelo metodo cartaNaPosicao por parametros diferentes
+		@Test
+		void pegarCartaNoBaralhoOrdenado2() {
+			Baralho b = new Baralho();
+			Carta c = b.cartaNaPosicao(12);
+			assertEquals("Copas", c.getNipe());
+			assertEquals("7", c.getFaces());
+			assertEquals(10, c.getValor());
+		
+		}
 		//Verificando se o baralho não esta gerando cartas iguais
 				@Test
 				void comparaCartaSemEmbaralhar() throws Exception{
@@ -54,5 +64,7 @@ public class BaralhoTest {
 					assertEquals("Copas", c.getNipe());
 					assertEquals("3", c.getFaces());
 					assertEquals(0, c.getValor());
-		}
+		}	
+				
+				}
 
