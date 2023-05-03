@@ -27,4 +27,5 @@ public class CartaTeste {
 		assertEquals(c.getNipe(), "Copas");
 		assertEquals(c.getFaces(), "As");
 		assertEquals(c.getValor(), 11);
+	}
 }

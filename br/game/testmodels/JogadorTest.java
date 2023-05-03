@@ -39,7 +39,7 @@ public class JogadorTest {
 	void limiteDecomprarCartas() throws Exception {
 		Baralho b = new Baralho();
 		Jogador j = new Jogador();
-		j.comprarCartas(b);
+		j.comprarCarta(b);
 	    assertEquals(3, j.tamanhoMao());
 	}
 	
