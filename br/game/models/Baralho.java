@@ -110,24 +110,27 @@ public class Baralho {
 				 return c;
 			 }
 		 }
-			//Metodo que gera a proxima carta de forma aleatoria
-			 private int posCarta() {
-				 return (int) Math.floor(Math.random() * this.tamanhoMonte);	
-			 }
-			//Metodo usado para ativar o embaralhamento
-			 public void embaralhar() {
-				 this.embaralhar = true;
-			 }
-			 public int tamanhoMonte() {
-				 return this.monte.size();
+		 
+		//Metodo que gera a proxima carta de forma aleatoria
+		 private int posCarta() {
+			 return (int) Math.floor(Math.random() * this.tamanhoMonte);	
 		 }
-			//Metodos para testes:
-			 public Carta obterCartaUm(String s1, String s2, int val) {
-				 return new Carta("Copas","2",0);
-			 }
-			 
-			 public Carta obterCartaDois(String s1, String s2, int val) {
-				 return new Carta("Copas","As", 11);
- 			 
-		} 
+		 
+		//Metodo usado para ativar o embaralhamento
+		 public void embaralhar() {
+			 this.embaralhar = true;
+		 }
+		 
+		 public int tamanhoMonte() {
+			 return this.monte.size();
+	     }
+		 
+		//Metodos para testes:
+		 public Carta obterCartaUm(String s1, String s2, int val) {
+			 return new Carta("Copas","2",0);
+		 }
+		 
+		 public Carta obterCartaDois(String s1, String s2, int val) {
+			 return new Carta("Copas","As", 11);
+	     } 
 }

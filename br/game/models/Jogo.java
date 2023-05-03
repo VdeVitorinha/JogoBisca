@@ -213,4 +213,13 @@ public class Jogo {
 	    }
 
 	}
+	
+	public static String mostraJogada() {
+		
+		System.out.println("Jogadores {"+jogadores.get(0).getNomeJogador()+" Jogada {"+cartasMesa.get(0)+"} "
+				+jogadores.get(1).getNomeJogador()+" Jogada {"+cartasMesa.get(1)+"} "+jogadores.get(2).getNomeJogador()+" Jogada {"+cartasMesa.get(2)+"} "
+				+ ""+jogadores.get(3).getNomeJogador()+" Jogada {"+cartasMesa.get(3)+"}}");
+	
+	return null;
+}
 }
