@@ -87,6 +87,18 @@ public class BaralhoTest {
 					Carta c = b.comprarCarta();
 					assertNotEquals("Copas", c.getNipe());
 					assertNotEquals("2", c.getFaces());
+					}
+				
+				//Teste que comparar duas cartas de um baralho embaralhado
+				@Test
+				void compararCartaEmbaralhado() throws Exception{
+					Baralho b =  new Baralho();
+					b.embaralhar();
+					Carta c1 = b.comprarCarta();
+					Carta c2 = b.comprarCarta();
+					
+					assertNotEquals(c1, c2);
+				}
 					
 	
 
