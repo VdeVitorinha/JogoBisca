@@ -99,6 +99,18 @@ public class BaralhoTest {
 					
 					assertNotEquals(c1, c2);
 				}
+				//Teste chegando no fim do baralho
+				@Test
+				void chegarFimBaralho() throws Exception{
+					Baralho b = new Baralho ();
+					b.embaralhar();
+					for(int i = 0;i < 52;i++) {
+						b.comprarCarta();
+					}
+					assertEquals(null, b.comprarCarta());
+				}
+
+			}
 					
 	
 
