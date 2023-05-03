@@ -9,6 +9,7 @@ public class Jogador {
 	private List<Carta> cartasMao;
 	private List<Carta> acumuladas;
 	private int tamanhoMao;
+	private int pontos;
 	
 	public Jogador(String nome) {
 		cartasMao = new ArrayList<>();
@@ -21,6 +22,16 @@ public class Jogador {
 		if (cartasMao.size() < 3) {
 			cartasMao.add(baralho.cederCarta());
 		}
+	}
+	
+	//Metodo de descarte de cartas
+	public Carta descarte(List<Carta> cartasMao, List<Carta> cartasMesa) {
+		int index = cartaAleatoria();
+	    Carta c = cartasMao.get(index);
+	    cartasMao.remove(index);
+	    cartasMesa.add(c);
+		tamanhoMao--;
+		return c;
 	}
 	
 	//metodo para jogar cartas do baralho na mesa
@@ -60,6 +71,24 @@ public class Jogador {
 			Carta c = b.comprarCartaTest();
 			cartasMao.add(c);
 			tamanhoMao++;
+		}
+
+
+	//Getters e Setters
+	
+		public int getPontos() {
+			return this.pontos;
+		}
+		
+		public void setPontos(int pontos ) {
+		    this.pontos = pontos;
+		}
+		
+		public void setNomeJogador(String nomeJogador) {
+			this.nome = nomeJogador;
+		}
+		public String getNomeJogador() {
+			return nome;
 		}
 
 }
