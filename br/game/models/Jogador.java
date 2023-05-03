@@ -47,4 +47,9 @@ public class Jogador {
 		tamanhoMao--;
 		return c;
 	}
+	
+	//Metodo que escolhe aleatoriamente a carta da mao do jogador
+		private int cartaAleatoria() {
+			return (int) Math.floor(Math.random() * 2);
+	}
 }
