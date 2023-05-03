@@ -1,6 +1,7 @@
 package br.game.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Jogo {
@@ -58,7 +59,41 @@ public class Jogo {
 				for(int k = 0; k < jogadores.size();k++) {
 					jogadores.get(k).descarte(jogadores.get(k).getCartasMao(), cartasMesa);
 				}
-			}		 
+			}
+			
+			
+			Carta maiorCarta = cartasMesa.get(0);
+			String primeiroNipe = cartasMesa.get(0).getNipe();
+			int valorPrimeiraCarta = maiorCarta.getValor();
+			Jogador jogadorMaiorFace = jogadores.get(0);
+			//Cartas com os nipes iguais 
+			for(int z =0; z < 1; z++) {
+				for(int x = z + 1 ; x < cartasMesa.size(); x++) {
+					Carta cartaJogada = cartasMesa.get(x);
+					String nipeVez = cartasMesa.get(x).getNipe();
+					int valorRodada = cartasMesa.get(x).getValor();					
+					if(primeiroNipe == nipeVez && primeiroNipe.equals(nipeVez)) {
+							if((cartaJogada.getValor() == 0) && (maiorCarta.getValor() == 0)) {
+								if(faceToInt(cartaJogada.getFaces()) >= faceToInt(maiorCarta.getFaces())) {
+									System.out.println(maiorCarta = cartaJogada);
+									System.out.println(jogadorMaiorFace = jogadores.get(x));
+									Collections.swap(jogadores, x, 0);
+									System.out.println("banana");
+								}
+							}else if((cartaJogada.getValor() > 1 && cartaJogada.getValor() < 12) || 
+									(maiorCarta.getValor() > 1  && maiorCarta.getValor() < 12)) {
+								    if(valorRodada > valorPrimeiraCarta) {
+								    	System.out.println(maiorCarta = cartaJogada);
+								    	valorPrimeiraCarta = valorRodada;
+								    	System.out.println(jogadorMaiorFace = jogadores.get(x));
+								    	Collections.swap(jogadores, x, 0);
+								    }else {		
+								        System.out.println("poda");
+								    }
+								   }
+			      }
+		       }  
+			}
 		}
 	}
 	
