@@ -20,7 +20,7 @@ public class Baralho {
 		
 		for(int i = 0; i < nipe.length; i++) {
 			for(int j = 0; j < faces.length; j++) {
-				this.monte.add(new CartaCopia(nipe[i], faces[j], vetValor[j]));
+				this.monte.add(new Carta(nipe[i], faces[j], vetValor[j]));
 			}
 		}		
 	}
