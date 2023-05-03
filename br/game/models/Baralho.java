@@ -22,16 +22,10 @@ public class Baralho {
 			for(int j = 0; j < faces.length; j++) {
 				this.monte.add(new Carta(nipe[i], faces[j], vetValor[j]));
 			}
-		}		
+		}
+		tamanhoBaralho();
 	}
-	
-	
-	//método que retornará o tamanho do monte de cartas
-	public int tamanhoBaralho() {
-		return monte.size();
-	}
-	
-	// metodo criado para conversar com o metodo da classe Jogador comprarCarta
+	//Metodo que o baralho cede cartas 
 	public Carta cederCarta() {
 		int posicao = random.nextInt(tamanhoBaralho());
 		Carta carta = monte.get(posicao);
@@ -39,4 +33,49 @@ public class Baralho {
 		
 		return carta;
 	}
+	
+	//método que retornará o tamanho do monte de cartas
+	public int tamanhoBaralho() {
+		return monte.size();
+	}
+	
+	//Metodo de teste que compra cartas da classe baralho
+		 public Carta comprarCarta() throws Exception{
+			 try {
+				 this.tamanhoMonte--;
+				 if(this.tamanhoMonte == 0) {
+					 throw new Exception("Fim do baralho");
+				 }
+				 return cartaNaPosicao(0);
+			 }catch(Exception e ) {
+				 e.printStackTrace();
+				/* 
+				 * Este metodo retorna a pilha de chamadas completa quando 
+				 * uma exceção é lançada e quais metodos e linhas de codigos
+				 * levaram ates esse ponto
+				 * 
+				 * */
+			 }
+			 return null;
+		 }
+		 
+		 //Metodo de teste alterado para não dispara a exceção - pedro
+		 public Carta comprarCartaTest() {
+			 try {
+				 this.tamanhoMonte--;
+				 if(this.tamanhoMonte == 0) {
+					 System.out.println("Fim do Baralho");
+				 }
+				 return cartaNaPosicao(0);
+			 }catch(Exception e ) {
+				 e.printStackTrace();
+				/* 
+				 * Este metodo retorna a pilha de chamadas completa quando 
+				 * uma exceção é lançada e quais metodos e linhas de codigos
+				 * levaram ates esse ponto
+				 * 
+				 * */
+			 }
+			 return null;
+		 }
 }

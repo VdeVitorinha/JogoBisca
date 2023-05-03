@@ -9,6 +9,7 @@ public class Jogador {
 	private List<Carta> cartasMao;
 	private List<Carta> acumuladas;
 	
+
 	public Jogador(String nome) {
 		cartasMao = new ArrayList<>();
 		acumuladas = new ArrayList<>();
