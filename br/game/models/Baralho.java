@@ -103,7 +103,10 @@ public class Baralho {
 				 this.monte.remove(pos);
 				 return c;
 			 }
-			 
+			//Metodo que gera a proxima carta de forma aleatoria
+			 private int posCarta() {
+				 return (int) Math.floor(Math.random() * this.tamanhoMonte);	
+			 }
 		 }
 
 }
