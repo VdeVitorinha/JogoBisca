@@ -16,8 +16,11 @@ public class Jogador {
 	}
 	
 	//metodo para jogar cartas do baralho na mesa
-	public void jogarCarta() {
+	public Carta jogarCarta(int posicao) {
+		Carta carta = cartasMao.get(posicao);
+		cartasMao.remove(posicao);
 		
+		return carta;
 	}
 	
 	
