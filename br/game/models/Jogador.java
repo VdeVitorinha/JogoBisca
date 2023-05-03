@@ -41,4 +41,21 @@ public class Jogador {
 	public String toString() {
 		return "("+nome+")"+cartasMao;
 	}
+	
+	//Getters e Setters
+	
+		public int getPontos() {
+			return this.pontos;
+		}
+		
+		public void setPontos(int pontos ) {
+		    this.pontos = pontos;
+		}
+		
+		public void setNomeJogador(String nomeJogador) {
+			this.nomeJogador = nomeJogador;
+		}
+		public String getNomeJogador() {
+			return nomeJogador;
+		}
 }
