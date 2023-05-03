@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import br.game.models.Baralho;
 import br.game.models.Baralho;
+import br.game.models.Baralho;
+import br.game.models.Jogador;
 import br.game.models.Jogador;
 import br.game.models.Jogador;
 
@@ -47,3 +49,12 @@ public class JogadorTest {
 		j.comprarCarta(b);
 		assertEquals(0, j.contarPontos());
 	}
+	
+	//Teste da soma das cartas de um nipe 
+		@Test
+		void somaPontosJogadorDois()throws Exception {
+			Baralho b = new Baralho();
+			Jogador j = new Jogador();
+			j.comprarCartasTest(b);
+			assertEquals(30, j.contarPontosTest());
+		}
