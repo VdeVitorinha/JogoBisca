@@ -8,6 +8,8 @@ public class Baralho {
 	Random random = new Random();
 	
 	private List<Carta> monte;
+	private int tamanhoMonte;
+	private boolean embaralhar;
 	
 	//Construtor do baralho, são usadas strings com as combinações para criar
 	// por meio de laços de repetição, a lista que conterá os objetos Carta
@@ -25,14 +27,8 @@ public class Baralho {
 		}
 		tamanhoBaralho();
 	}
-	//Metodo que o baralho cede cartas 
-	public Carta cederCarta() {
-		int posicao = random.nextInt(tamanhoBaralho());
-		Carta carta = monte.get(posicao);
-		monte.remove(posicao);
-		
-		return carta;
-	}
+	
+	
 	
 	//método que retornará o tamanho do monte de cartas
 	public int tamanhoBaralho() {
@@ -59,6 +55,15 @@ public class Baralho {
 			 return null;
 		 }
 		 
+		// metodo criado para conversar com o metodo da classe Jogador comprarCarta
+			public Carta cederCarta() {
+				int posicao = random.nextInt(tamanhoBaralho());
+				Carta carta = monte.get(posicao);
+				monte.remove(posicao);
+				
+				return carta;
+			}
+		 
 		 //Metodo de teste alterado para não dispara a exceção - pedro
 		 public Carta comprarCartaTest() {
 			 try {
@@ -78,6 +83,7 @@ public class Baralho {
 			 }
 			 return null;
 		 }
+		 
 		 /*
 		  * Metodo usado para retorna a carta na posicao escolhida
 		  * Ele tem um if-else, onde é usado como codicional o atributo embaralhar
@@ -103,6 +109,7 @@ public class Baralho {
 				 this.monte.remove(pos);
 				 return c;
 			 }
+		 }
 			//Metodo que gera a proxima carta de forma aleatoria
 			 private int posCarta() {
 				 return (int) Math.floor(Math.random() * this.tamanhoMonte);	
@@ -121,7 +128,6 @@ public class Baralho {
 			 
 			 public Carta obterCartaDois(String s1, String s2, int val) {
 				 return new Carta("Copas","As", 11);
-			 
+ 			 
 		} 
-
 }
