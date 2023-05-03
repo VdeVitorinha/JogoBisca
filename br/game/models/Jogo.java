@@ -14,7 +14,7 @@ public class Jogo {
 	
 	public static boolean temTrunfo = false;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		//Criação do baralho e dos jogadores e do trunfo 
         //Criando o baralho do jogo
@@ -27,14 +27,21 @@ public class Jogo {
 		
 		//Criando os 4 jogadores
 		Jogador j1 = new Jogador("J1");
-		j1.comprarCartas(b);
+		j1.comprarCarta(b);
+		j1.comprarCarta(b);
+		j1.comprarCarta(b);
 		Jogador j2 = new Jogador("J2");
-		j2.comprarCartas(b);
+		j2.comprarCarta(b);
+		j2.comprarCarta(b);
+		j2.comprarCarta(b);
 		Jogador j3 = new Jogador("J3");
-		j3.comprarCartas(b);
+		j3.comprarCarta(b);
+		j3.comprarCarta(b);
+		j3.comprarCarta(b);
 		Jogador j4 = new Jogador("J4");
-		j4.comprarCartas(b);
-		//JogadorCopia j5 = new JogadorCopia();
+		j4.comprarCarta(b);
+		j4.comprarCarta(b);
+		j4.comprarCarta(b);
 		
 		//mostra cartas dos jogadores
 		System.out.println(j1);
@@ -66,7 +73,7 @@ public class Jogo {
 				Carta c2 = j2.descarte(j2.getCartasMao(), cartasMesa);
 				Carta c3 = j3.descarte(j3.getCartasMao(), cartasMesa); 
 				Carta c4 = j4.descarte(j4.getCartasMao(), cartasMesa);
-			 System.out.println("Jogada = {J1: "+c1+", J2: "+c2+" , J3: "+c3+" , J4: "+c4+" }" );
+			    System.out.println("Jogada = {J1: "+c1+", J2: "+c2+" , J3: "+c3+" , J4: "+c4+" }" );
 			}else {
 				for(int k = 0; k < jogadores.size();k++) {
 					jogadores.get(k).descarte(jogadores.get(k).getCartasMao(), cartasMesa);
