@@ -8,6 +8,8 @@ import br.game.models.Baralho;
 import br.game.models.Baralho;
 import br.game.models.Baralho;
 import br.game.models.Baralho;
+import br.game.models.Baralho;
+import br.game.models.Jogador;
 import br.game.models.Jogador;
 import br.game.models.Jogador;
 import br.game.models.Jogador;
@@ -65,6 +67,15 @@ public class JogadorTest {
 		void somaPontosDoBaralhoInteiro() throws Exception{
 			Baralho b = new Baralho();
 			Jogador j = new Jogador();
+			j.comprarCartasAteFinalBaralho(b);
+			assertEquals(120, j.contarPontosTest());
+		}
+		
+		//Teste de compra cartas e soma de forma embaralhada
+		void somaPontosDoBaralhoInteiroEmbaralhado() throws Exception{
+			Baralho b = new Baralho();
+			Jogador j = new Jogador();
+			b.embaralhar();
 			j.comprarCartasAteFinalBaralho(b);
 			assertEquals(120, j.contarPontosTest());
 		}
