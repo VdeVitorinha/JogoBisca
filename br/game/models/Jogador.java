@@ -1,5 +1,6 @@
 package br.game.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Jogador {
@@ -7,6 +8,12 @@ public class Jogador {
 	private String nome;
 	private List<Carta> cartasMao;
 	private List<Carta> acumuladas;
+	
+	public Jogador(String nome) {
+		cartasMao = new ArrayList<>();
+		acumuladas = new ArrayList<>();
+		
+	}
 	
 	//metodo para comprar cartas do do baralho
 	public void comprarCarta(Baralho baralho) {
@@ -23,6 +30,9 @@ public class Jogador {
 		return carta;
 	}
 	
-	
-
+	public void recebeAcumuladas(List<Carta> cartasMesa) {
+		for(Carta carta : cartasMesa) {
+			this.acumuladas.add(carta);
+		}
+	}
 }
