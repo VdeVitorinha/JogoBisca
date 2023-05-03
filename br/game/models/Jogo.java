@@ -12,6 +12,14 @@ public class Jogo {
 	public static List<Jogador> jogadores = new ArrayList<>();
 	
 	public static void main(String[] args) {
-	
+		
+		//Criação do baralho e dos jogadores e do trunfo 
+        //Criando o baralho do jogo
+		Baralho b = new Baralho();
+		b.embaralhar();//Embaralhando 
+				
+		//Definindo o trunfo da partida
+		Carta trunfo = b.comprarCarta();
+		System.out.println("TRUNFO: "+trunfo);
 	}
 }
