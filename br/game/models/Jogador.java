@@ -8,6 +8,7 @@ public class Jogador {
 	private String nome;
 	private List<Carta> cartasMao;
 	private List<Carta> acumuladas;
+	private int tamanhoMao = 0;
 	
 
 	public Jogador(String nome) {
@@ -35,5 +36,15 @@ public class Jogador {
 		for(Carta carta : cartasMesa) {
 			this.acumuladas.add(carta);
 		}
+	}
+	
+	//Metodo de descarte das cartas 
+	public Carta descarte(List<Carta> cartasMao, List<Carta> cartasMesa) {
+		int index = cartaAleatoria();
+	    Carta c = cartasMao.get(index);
+	    cartasMao.remove(index);
+	    cartasMesa.add(c);
+		tamanhoMao--;
+		return c;
 	}
 }
