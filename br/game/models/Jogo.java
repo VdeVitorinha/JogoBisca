@@ -12,6 +12,8 @@ public class Jogo {
 	//Cria uma lista de jogadores da partida
 	public static List<Jogador> jogadores = new ArrayList<>();
 	
+	public static boolean temTrunfo = false;
+	
 	public static void main(String[] args) {
 		
 		//Criação do baralho e dos jogadores e do trunfo 
@@ -46,6 +48,43 @@ public class Jogo {
 		//For loop que vai acontecer as rodadas
 		for(int i = 0; i < 1; i++) {
 			rodada += 1;
+			
+			
+			if(rodada == 1) {
+				
+				Carta c1;
+			    Carta c2;
+			    Carta c3;
+			    Carta c4;
+				
+				//Cada jogador joga uma carta da mao para mesa
+				c1 = j1.descarte(j1.getCartasMao(), cartasMesa);
+				c2 = j2.descarte(j2.getCartasMao(), cartasMesa);
+			    c3 = j3.descarte(j3.getCartasMao(), cartasMesa); 
+			    c4 = j4.descarte(j4.getCartasMao(), cartasMesa);
+			    cartasMesa.add(c1);
+				cartasMesa.add(c2);
+				cartasMesa.add(c3);
+				cartasMesa.add(c4);
+				System.out.println("Jogada = {J1: "+c1+", J2: "+c2+" , J3: "+c3+" , J4: "+c4+" }" );
+			}else {
+				for(int k = 0; k < jogadores.size();k++) {
+					jogadores.get(k).descarte(jogadores.get(k).getCartasMao(), cartasMesa);
+				}
+				
+				for(Carta carta : cartasMesa ) {
+					cartasMesa.add(carta);
+				}
+			    
+			}		 
+			
+			System.out.println();
+		    
+			
+			
+			
+			
+			
 			System.out.println("Rodada "+1);
 			
 			if(rodada == 1) {
@@ -94,7 +133,50 @@ public class Jogo {
 			      }
 		       }  
 			}
+			
+			String nipeTrunfo = trunfo.getNipe();
+			Jogador jogadorTrunfo = null ;
+			int pos = 0;
+			//Cartas com nipes diferentes e sem trunfo
+			for(int w = 0; w < 1 ;w++) {
+				for(int x = w ; x < cartasMesa.size() + 1; x++) {
+					Carta cartaJogada = cartasMesa.get(x);
+					//JogadorCopia jogadorRodada = jogadores.get(x);
+					String nipeVez = cartasMesa.get(x).getNipe();
+					if(! (primeiroNipe == nipeVez && primeiroNipe.equals(nipeVez))) {
+						if((primeiroNipe == nipeTrunfo && primeiroNipe.equals(nipeTrunfo)) || 
+						  (nipeVez == nipeTrunfo && nipeVez.equals(nipeTrunfo))) {
+							jogadorTrunfo = jogadores.get(x);
+							pos = x;
+							temTrunfo = true;
+					    }
+				    }
+				    
+				}
+				
+			}
+			if(temTrunfo == true) {
+				Collections.swap(jogadores, pos, 0);
+				jogadorTrunfo.recebeAcumuladas(cartasMesa);
+			}else {
+	            String jNome = jogadores.get(0).getNomeJogador();
+				//jogadores.get(0).pegarCartas(cartasMesa); 
+				System.out.println("Jogador da rodada "+jNome);
+
+			}	
+		    
+			//No final de cada rodada cada jogador vai ter duas cartas, logo é necessario eles comprarem uma carta a cada final de rodada
+			j1.comprarCarta(b);
+			j2.comprarCarta(b);
+			j3.comprarCarta(b);
+			j4.comprarCarta(b);
+			
+			System.out.println();
+			System.out.println();
+			
 		}
+		
+		
 	}
 	
 	//Clase que converte String em inteiro 
@@ -129,4 +211,6 @@ public class Jogo {
 	        default:
 	            throw new IllegalArgumentException("Face de carta inválida: " + face);
 	    }
+
+	}
 }
