@@ -52,4 +52,12 @@ public class Jogador {
 		private int cartaAleatoria() {
 			return (int) Math.floor(Math.random() * 2);
 	}
+	public void comprarCartasTest(BaralhoCopia b) throws Exception {
+		int i = 0;
+		do {
+				i++;
+				comprarCarta(b);
+				tamanhoMao++;
+		}while(i < 15);
+		}
 }
