@@ -90,5 +90,8 @@ public class Jogador {
 		public String getNomeJogador() {
 			return nome;
 		}
-
+		
+		public List<Carta> getCartasMao() {
+			return cartasMao;
+		}
 }
