@@ -62,7 +62,7 @@ public class Carta {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			CartaCopia other = (CartaCopia) obj;
+			Carta other = (Carta) obj;
 			return Objects.equals(face, other.face)
 					&& Objects.equals(nipe, other.nipe) && valor == other.valor;
 		}
