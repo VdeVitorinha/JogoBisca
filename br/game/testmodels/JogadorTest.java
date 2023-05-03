@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import br.game.models.Baralho;
 import br.game.models.Baralho;
 import br.game.models.Baralho;
+import br.game.models.Baralho;
+import br.game.models.Jogador;
 import br.game.models.Jogador;
 import br.game.models.Jogador;
 import br.game.models.Jogador;
@@ -20,7 +22,6 @@ public class JogadorTest {
 		    j.comprarCarta(b);
 			assertEquals(0, j.contarPontosTest());
 		}
-}
 
 	//Teste refeito.
 		@Test
@@ -58,3 +59,13 @@ public class JogadorTest {
 			j.comprarCartasTest(b);
 			assertEquals(30, j.contarPontosTest());
 		}
+		
+		//Teste de compra cartas e soma 
+		@Test 
+		void somaPontosDoBaralhoInteiro() throws Exception{
+			Baralho b = new Baralho();
+			Jogador j = new Jogador();
+			j.comprarCartasAteFinalBaralho(b);
+			assertEquals(120, j.contarPontosTest());
+		}
+	}
