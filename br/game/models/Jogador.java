@@ -52,12 +52,18 @@ public class Jogador {
 		private int cartaAleatoria() {
 			return (int) Math.floor(Math.random() * 2);
 	}
-	public void comprarCartasTest(BaralhoCopia b) throws Exception {
+	public void comprarCartasTest(Baralho b) throws Exception {
 		int i = 0;
 		do {
 				i++;
 				comprarCarta(b);
 				tamanhoMao++;
 		}while(i < 15);
+		}
+	//Metodo que para vereficar a comprar de cartas ate o final do baralho sem dispara a exeção
+		public void comprarCartaMao(Baralho b) {
+		Carta c = b.comprarCartaTest();
+		cartasMao.add(c);
+		tamanhoMao++;
 		}
 }
