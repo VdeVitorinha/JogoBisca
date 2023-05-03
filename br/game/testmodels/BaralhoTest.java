@@ -79,4 +79,14 @@ public class BaralhoTest {
 					assertNotEquals("3", c.getFaces());
 				
 				}
+				//Teste que verifica se o baralho foi embaralhado
+				@Test
+				void comprarPrimeiraCartaEmbaralhado() throws Exception{
+					Baralho b = new Baralho();
+					b.embaralhar();
+					Carta c = b.comprarCarta();
+					assertNotEquals("Copas", c.getNipe());
+					assertNotEquals("2", c.getFaces());
+					
+	
 
