@@ -26,13 +26,13 @@ public class Jogo {
 		System.out.println("TRUNFO: "+trunfo);
 		
 		//Criando os 4 jogadores
-		Jogador j1 = new Jogador("Romario");
+		Jogador j1 = new Jogador("J1");
 		j1.comprarCartas(b);
-		Jogador j2 = new Jogador("Ronaldo");
+		Jogador j2 = new Jogador("J2");
 		j2.comprarCartas(b);
-		Jogador j3 = new Jogador("Ney");
+		Jogador j3 = new Jogador("J3");
 		j3.comprarCartas(b);
-		Jogador j4 = new Jogador("Pele");
+		Jogador j4 = new Jogador("J4");
 		j4.comprarCartas(b);
 		//JogadorCopia j5 = new JogadorCopia();
 		
@@ -44,47 +44,20 @@ public class Jogo {
 		
 		System.out.println();
 		System.out.println();
+		
+		 jogadores.add(j1);
+	     jogadores.add(j2);
+	     jogadores.add(j3);
+	     jogadores.add(j4);
+		    
+		
 		int rodada = 0;
 		//For loop que vai acontecer as rodadas
 		for(int i = 0; i < 1; i++) {
 			rodada += 1;
 			
-			
-			if(rodada == 1) {
-				
-				Carta c1;
-			    Carta c2;
-			    Carta c3;
-			    Carta c4;
-				
-				//Cada jogador joga uma carta da mao para mesa
-				c1 = j1.descarte(j1.getCartasMao(), cartasMesa);
-				c2 = j2.descarte(j2.getCartasMao(), cartasMesa);
-			    c3 = j3.descarte(j3.getCartasMao(), cartasMesa); 
-			    c4 = j4.descarte(j4.getCartasMao(), cartasMesa);
-			    cartasMesa.add(c1);
-				cartasMesa.add(c2);
-				cartasMesa.add(c3);
-				cartasMesa.add(c4);
-				System.out.println("Jogada = {J1: "+c1+", J2: "+c2+" , J3: "+c3+" , J4: "+c4+" }" );
-			}else {
-				for(int k = 0; k < jogadores.size();k++) {
-					jogadores.get(k).descarte(jogadores.get(k).getCartasMao(), cartasMesa);
-				}
-				
-				for(Carta carta : cartasMesa ) {
-					cartasMesa.add(carta);
-				}
-			    
-			}		 
-			
 			System.out.println();
 		    
-			
-			
-			
-			
-			
 			System.out.println("Rodada "+1);
 			
 			if(rodada == 1) {
@@ -93,18 +66,19 @@ public class Jogo {
 				Carta c2 = j2.descarte(j2.getCartasMao(), cartasMesa);
 				Carta c3 = j3.descarte(j3.getCartasMao(), cartasMesa); 
 				Carta c4 = j4.descarte(j4.getCartasMao(), cartasMesa);
-				 System.out.println("Jogada = {J1: "+c1+", J2: "+c2+" , J3: "+c3+" , J4: "+c4+" }" );
+			 System.out.println("Jogada = {J1: "+c1+", J2: "+c2+" , J3: "+c3+" , J4: "+c4+" }" );
 			}else {
 				for(int k = 0; k < jogadores.size();k++) {
 					jogadores.get(k).descarte(jogadores.get(k).getCartasMao(), cartasMesa);
 				}
+				mostraJogada();
 			}
 			
 			
 			Carta maiorCarta = cartasMesa.get(0);
 			String primeiroNipe = cartasMesa.get(0).getNipe();
 			int valorPrimeiraCarta = maiorCarta.getValor();
-			Jogador jogadorMaiorFace = jogadores.get(0);
+			Jogador jogadorMaiorFace = null;
 			//Cartas com os nipes iguais 
 			for(int z =0; z < 1; z++) {
 				for(int x = z + 1 ; x < cartasMesa.size(); x++) {
