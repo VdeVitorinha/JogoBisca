@@ -14,12 +14,13 @@ public class Baralho {
 	public Baralho() {
 		String[] nipe = {"Copas", "Espadas", "Ouros", "Paus"};
 		String[] faces = {"2","3","4","5","6","8","9","10","Q","J","K","As","7"};
+		int[] vetValor = { 0,  0,  0,  0,  0,  0,  0,  0,  2,  3,  4,  11,  10};
 		
 		this.monte = new ArrayList<>();
 		
 		for(int i = 0; i < nipe.length; i++) {
 			for(int j = 0; j < faces.length; j++) {
-				this.monte.add(new Carta (nipe[i], faces[j]));
+				this.monte.add(new CartaCopia(nipe[i], faces[j], vetValor[j]));
 			}
 		}		
 	}

@@ -9,13 +9,18 @@ public class Jogador {
 	private List<Carta> acumuladas;
 	
 	//metodo para comprar cartas do do baralho
-	public void comprarCarta() {
-		
+	public void comprarCarta(Baralho baralho) {
+		if (cartasMao.size() < 3) {
+			cartasMao.add(baralho.cederCarta());
+		}
 	}
 	
 	//metodo para jogar cartas do baralho na mesa
-	public void jogarCarta() {
+	public Carta jogarCarta(int posicao) {
+		Carta carta = cartasMao.get(posicao);
+		cartasMao.remove(posicao);
 		
+		return carta;
 	}
 	
 	
