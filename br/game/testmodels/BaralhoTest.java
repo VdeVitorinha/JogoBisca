@@ -30,4 +30,13 @@ public class BaralhoTest {
 			Carta c = b.comprarCarta();
 			assertEquals("class br.game.models.Carta", c.getClass().toString());
 		}
+		//Teste de compra de carta pelo metodo cartaNaPosicao
+		@Test
+		void pegarCartaNoBaralhoOrdenado() {
+			Baralho b = new Baralho();
+			Carta c = b.cartaNaPosicao(0);
+			assertEquals("Copas", c.getNipe());
+			assertEquals("2", c.getFaces());
+			assertEquals(0, c.getValor());
+		}
 }
