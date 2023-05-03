@@ -64,7 +64,19 @@ public class BaralhoTest {
 					assertEquals("Copas", c.getNipe());
 					assertEquals("3", c.getFaces());
 					assertEquals(0, c.getValor());
-		}	
+					
+		}	//Faz a compra das cartas do baralho embaralhado e verifica a diferença entre elas
+				@Test
+				void comparaCartaEmbaralhar() throws Exception{
+					Baralho b = new Baralho();
+					b.embaralhar();
+					Carta c ; 
+				    c = b.comprarCarta();		
+					assertNotEquals("Copas", c.getNipe());
+					assertNotEquals("2", c.getFaces());
+					c = b.comprarCarta();
+					assertNotEquals("Copas", c.getNipe());
+					assertNotEquals("3", c.getFaces());
 				
 				}
 
