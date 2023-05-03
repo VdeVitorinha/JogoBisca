@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import br.game.models.Baralho;
-import br.game.models.BaralhoCopia;
-import br.game.models.CartaCopia;
+import br.game.models.Baralho;
+import br.game.models.Carta;
 
 public class BaralhoTest {
 	
@@ -40,3 +40,4 @@ public class BaralhoTest {
 			assertEquals(0, c.getValor());
 		}
 }
+
