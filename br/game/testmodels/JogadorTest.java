@@ -8,9 +8,7 @@ import br.game.models.BaralhoCopia;
 import br.game.models.JogadorCopia;
 
 public class JogadorTest {
-	//Teste para comprar a primeira carta do 
-		//baralho de forma ordenada.
-		
+	//Teste realizar a primeira compra no baralho de forma ordenada.
 		@Test
 		void comprarPrimeiraCartaSemEmbaralhar() throws Exception{
 			Baralho b =  new Baralho();
@@ -19,3 +17,12 @@ public class JogadorTest {
 			assertEquals(0, j.contarPontosTest());
 		}
 }
+
+	//Teste refeito.
+		@Test
+		void comprarPrimeiraCartaSemEmbaralharDois() throws Exception{
+			BaralhoCopia b =  new BaralhoCopia();
+			JogadorCopia j = new JogadorCopia();
+			j.comprarCartaAcumuladas(b);
+			assertEquals(0, j.contarPontos());
+		}
