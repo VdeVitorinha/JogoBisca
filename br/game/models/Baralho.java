@@ -78,4 +78,32 @@ public class Baralho {
 			 }
 			 return null;
 		 }
+		 /*
+		  * Metodo usado para retorna a carta na posicao escolhida
+		  * Ele tem um if-else, onde é usado como codicional o atributo embaralhar
+		  * se ele for true ele pega uma carta no baralho de forma aleatoria
+		  * caso não ele retorna o baralho na posicao indicada que é sempre 0 ou seja 
+		  * a primeira posicao.
+		  *
+		  **/
+		 public Carta cartaNaPosicao(int pos) {
+			 if(this.embaralhar) {
+				 if(this.tamanhoMonte == 1) {
+					 Carta c = this.monte.get(0);
+					 this.monte.remove(0);
+					 return c;
+				 }
+				 
+				 int index = posCarta();
+				 Carta c = this.monte.get(index);
+				 this.monte.remove(index);
+				 return c;
+			 }else {
+				 Carta c = this.monte.get(pos);
+				 this.monte.remove(pos);
+				 return c;
+			 }
+			 
+		 }
+
 }
