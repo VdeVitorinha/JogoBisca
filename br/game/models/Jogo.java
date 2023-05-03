@@ -41,6 +41,13 @@ public class Jogo {
 		
 		System.out.println();
 		System.out.println();
+		int rodada = 0;
+		//For loop que vai acontecer as rodadas
+		for(int i = 0; i < 1;i++) {
+			rodada += 1;
+			System.out.println("Rodada "+1);
+			
+		}
 	}
 	
 	//Clase que converte String em inteiro 
@@ -53,7 +60,7 @@ public class Jogo {
 	        case "3":
 	            return 3;
 	        case "4":
-	            return 4;
+	            return 4; 
 	        case "5":
 	            return 5;
 	        case "6":
