@@ -107,6 +107,10 @@ public class Baralho {
 			 private int posCarta() {
 				 return (int) Math.floor(Math.random() * this.tamanhoMonte);	
 			 }
+			//Metodo usado para ativar o embaralhamento
+			 public void embaralhar() {
+				 this.embaralhar = true;
+			 }
 		 }
 
 }
