@@ -111,6 +111,17 @@ public class Baralho {
 			 public void embaralhar() {
 				 this.embaralhar = true;
 			 }
+			 public int tamanhoMonte() {
+				 return this.monte.size();
 		 }
+			//Metodos para testes:
+			 public Carta obterCartaUm(String s1, String s2, int val) {
+				 return new Carta("Copas","2",0);
+			 }
+			 
+			 public Carta obterCartaDois(String s1, String s2, int val) {
+				 return new Carta("Copas","As", 11);
+			 
+		} 
 
 }
