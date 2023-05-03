@@ -25,7 +25,7 @@ public class Jogo {
 		//Criando os 4 jogadores
 		Jogador j1 = new Jogador("Romario");
 		j1.comprarCartas(b);
-		JogadorCopia j2 = new Jogador("Ronaldo");
+		Jogador j2 = new Jogador("Ronaldo");
 		j2.comprarCartas(b);
 		Jogador j3 = new Jogador("Ney");
 		j3.comprarCartas(b);
@@ -43,10 +43,22 @@ public class Jogo {
 		System.out.println();
 		int rodada = 0;
 		//For loop que vai acontecer as rodadas
-		for(int i = 0; i < 1;i++) {
+		for(int i = 0; i < 1; i++) {
 			rodada += 1;
 			System.out.println("Rodada "+1);
 			
+			if(rodada == 1) {
+				//Cada jogador joga uma carta da mao para mesa
+				Carta c1 = j1.descarte(j1.getCartasMao(), cartasMesa);
+				Carta c2 = j2.descarte(j2.getCartasMao(), cartasMesa);
+				Carta c3 = j3.descarte(j3.getCartasMao(), cartasMesa); 
+				Carta c4 = j4.descarte(j4.getCartasMao(), cartasMesa);
+				 System.out.println("Jogada = {J1: "+c1+", J2: "+c2+" , J3: "+c3+" , J4: "+c4+" }" );
+			}else {
+				for(int k = 0; k < jogadores.size();k++) {
+					jogadores.get(k).descarte(jogadores.get(k).getCartasMao(), cartasMesa);
+				}
+			}		 
 		}
 	}
 	
